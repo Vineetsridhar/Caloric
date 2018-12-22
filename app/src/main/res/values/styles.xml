@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FBE4A2</item>
+        <item name="colorPrimaryDark">#FBE292</item>
+        <item name="colorAccent">#fb92c5</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#F4E4B4</item>
+        <item name="colorPrimaryDark">#FBE292</item>
+        <item name="colorAccent">#fb92c5</item>
+    </style>
+
+    <style name="butonStyle">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@drawable/custom_button</item>
+    </style>
+    <style name="radioButtonStyle">
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="editTextStyle">
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <style name="previewStyle">
+        <item name = "android:textSize">20sp</item>
+        <item name="android:paddingTop">50dp</item>
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name = "textStyle">
+        <item name = "android:textSize">30sp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>
