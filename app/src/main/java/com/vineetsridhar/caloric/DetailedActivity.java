@@ -204,6 +204,8 @@ public class DetailedActivity extends AppCompatActivity {
                 startActivity(new Intent(DetailedActivity.this, MainActivity.class));
                 sharedPreferences.edit().putBoolean("firstTime", true).apply();
                 break;
+            case R.id.strength:
+                startActivity(new Intent(DetailedActivity.this, StrengthWorkoutActivity.class));
         }
         return true;
     }

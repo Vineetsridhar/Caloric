@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,8 @@ public class AddWorkoutActivity extends AppCompatActivity {
     EditText timeBox, calories, titleBox;
     ArrayList<Workout> workoutList;
     Workout workout;
+    RadioButton button;
+    boolean call;
 
     int burned;
     @Override
@@ -30,9 +34,13 @@ public class AddWorkoutActivity extends AppCompatActivity {
 
         Paper.init(getBaseContext());
 
+        Intent i = getIntent();
+        call = i.getBooleanExtra("call", false);
+
         sharedPreferences = getSharedPreferences("com.vineetsridhar.caloric", Context.MODE_PRIVATE);
         workoutList = Paper.book().read("workoutList", new ArrayList<Workout>());
 
+        button = findViewById(R.id.mod);
         group = findViewById(R.id.radioGroup);
         timeBox = findViewById(R.id.time);
         titleBox = findViewById(R.id.title);
@@ -40,6 +48,11 @@ public class AddWorkoutActivity extends AppCompatActivity {
         calories = findViewById(R.id.calories);
         estimate = findViewById(R.id.estimate);
 
+        if(call){
+            titleBox.setText("Workout");
+            button.toggle();
+            timeBox.setText(i.getStringExtra("time"));
+        }
 
         estimate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +63,8 @@ public class AddWorkoutActivity extends AppCompatActivity {
                     workout = new Workout(title, Integer.parseInt(time), getMET(), weight);
                     closing();
                 }
+                Toast.makeText(getBaseContext(), "Fill out all fields", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -59,8 +74,9 @@ public class AddWorkoutActivity extends AppCompatActivity {
                 String calorie, title;
                 if(! (calorie = calories.getText().toString()).equals("") && ! (title = titleBox.getText().toString()).equals("")) {
                     workout = new Workout(title, Integer.parseInt(calorie));
+                    closing();
                 }
-                closing();
+                Toast.makeText(getBaseContext(), "Fill out all fields", Toast.LENGTH_LONG).show();
             }
         });
 

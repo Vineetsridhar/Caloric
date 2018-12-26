@@ -3,5 +3,6 @@
     <item android:id="@+id/edit" android:title="Edit"/>
     <item android:id="@+id/edit_details" android:title="Change Values" />
     <item android:id="@+id/notification" android:title="Notify"/>
+    <item android:id="@+id/strength" android:title="Start Workout"/>
 
 </menu>
