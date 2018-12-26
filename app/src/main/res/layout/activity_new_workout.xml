@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/rootView"
     android:layout_height="match_parent"
     tools:context=".NewWorkoutActivity">
     <ImageView
@@ -65,6 +66,30 @@
             android:text="Finish"
             android:id="@+id/finish"/>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/timerView"
+        android:visibility="gone"
+        android:background="@drawable/background_hdpi">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:background="@drawable/bar_background"
+            android:max="1000"
+            android:progressDrawable="@drawable/bar_progress"
+            android:id="@+id/bar"
+            android:indeterminate="false"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            style="@style/textStyle"
+            tools:text="Hello"
+            android:id="@+id/timerText"/>
+    </RelativeLayout>
 
 
 
